@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOMART VIP — Carta Digital</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>MOMART VIP · Reservado 04</h1>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="./index.html" class="active">Carta VIP</a></li>
+          <li><a href="./carrito.html">Mi Mesa / Carrito</a></li>
+          <li><a href="./tracking.html">Estado Pedido</a></li>
+          <li><a href="./barra.html">Panel Barra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="vista-listado">
+      <h2>Carta Disponible</h2>
+      <div id="contenedor-productos" class="grid-productos"></div>
+    </section>
+
+    <section id="vista-detalle" class="oculto">
+      <button id="btn-volver" type="button">← Volver a la carta</button>
+      <div id="contenedor-detalle"></div>
+    </section>
+  </main>
+</body>
+</html>
