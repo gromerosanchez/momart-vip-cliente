@@ -67,3 +67,79 @@ export function pintarDetalle(producto, nombreCategoria, contenedor) {
     </article>
   `;
 }
+
+/**
+ * Muestra un mensaje de error accesible junto a un campo de formulario.
+ * @param {HTMLElement} campo
+ * @param {string|null} mensaje
+ */
+export function mostrarErrorCampo(campo, mensaje) {
+  const idError = campo.getAttribute('aria-describedby');
+  const contenedorError = idError ? document.getElementById(idError) : null;
+
+  if (mensaje) {
+    campo.setAttribute('aria-invalid', 'true');
+    if (contenedorError) {
+      contenedorError.textContent = mensaje;
+    }
+    return;
+  }
+
+  campo.removeAttribute('aria-invalid');
+  if (contenedorError) {
+    contenedorError.textContent = '';
+  }
+}
+
+/**
+ * Conecta la validación al salir (blur) y en tiempo real tras haber tocado el campo (input/change).
+ * @param {HTMLFormElement} formulario
+ * @param {Function} validarCampoFn
+ */
+export function conectarValidacionInteractiva(formulario, validarCampoFn) {
+  const campos = formulario.querySelectorAll('input, select, textarea');
+
+  campos.forEach((campo) => {
+    const eventoCambio = campo.type === 'checkbox' || campo.tagName === 'SELECT' ? 'change' : 'input';
+
+    campo.addEventListener('blur', () => {
+      campo.dataset.tocado = 'true';
+      const error = validarCampoFn(campo);
+      mostrarErrorCampo(campo, error);
+    });
+
+    campo.addEventListener(eventoCambio, () => {
+      if (campo.dataset.tocado === 'true' || campo.getAttribute('aria-invalid') === 'true') {
+        const error = validarCampoFn(campo);
+        mostrarErrorCampo(campo, error);
+      }
+    });
+  });
+}
+
+/**
+ * Valida todos los campos de un formulario, muestra sus errores y enfoca el primero inválido.
+ * @param {HTMLFormElement} formulario
+ * @param {Function} validarCampoFn
+ * @returns {boolean}
+ */
+export function validarFormularioCompleto(formulario, validarCampoFn) {
+  const campos = Array.from(formulario.querySelectorAll('input, select, textarea'));
+  let primerInvalido = null;
+
+  campos.forEach((campo) => {
+    campo.dataset.tocado = 'true';
+    const error = validarCampoFn(campo);
+    mostrarErrorCampo(campo, error);
+    if (error && !primerInvalido) {
+      primerInvalido = campo;
+    }
+  });
+
+  if (primerInvalido) {
+    primerInvalido.focus();
+    return false;
+  }
+
+  return true;
+}
