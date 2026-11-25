@@ -102,4 +102,14 @@ export const productos = [
     stock: true,
     descripcion: 'Cachimba de acero inoxidable con cazoleta premium, carbón natural y boquillas desechables para todo el reservado.',
   },
+  //nuevo producto pedido por marea y comprobado que su id corresponde 
+  {
+    id: 11,
+    categoriaId: 1,
+    nombre: 'Vodka Eristoff black 70cl',
+    precio: 70,
+    refrescosIncluidos: 0,
+    stock: true,
+    descripcion: 'Vodka Eristoff, vodka originario de Georgia con aromas intensos y dulces y una sensacion en boca sedosa y densa',
+  },
 ];

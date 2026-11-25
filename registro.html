@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOMART VIP — Registro de Usuarios</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="module" src="./js/registro.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>MOMART VIP · Reservado 04</h1>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="./index.html">Carta VIP</a></li>
+          <li><a href="./carrito.html">Mi Mesa / Carrito</a></li>
+          <li><a href="./tracking.html">Estado Pedido</a></li>
+          <li><a href="./barra.html">Panel Barra</a></li>
+          <li><a href="./registro.html" class="active">Registro VIP</a></li>
+          <li><a href="./contacto.html">Contacto VIP</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout-dos-columnas">
+    <section class="panel-formulario">
+      <h2 id="titulo-formulario-registro">Registro de Cliente VIP</h2>
+      <form id="form-registro" class="formulario-vip" novalidate>
+        <div class="campo-grupo">
+          <label for="reg-usuario">Nombre de usuario</label>
+          <input
+            type="text"
+            id="reg-usuario"
+            name="usuario"
+            required
+            minlength="3"
+            maxlength="30"
+            aria-describedby="error-reg-usuario"
+            autocomplete="username"
+          >
+          <span id="error-reg-usuario" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="reg-correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="reg-correo"
+            name="correo"
+            required
+            maxlength="100"
+            aria-describedby="error-reg-correo"
+            autocomplete="email"
+          >
+          <span id="error-reg-correo" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="reg-password">Contraseña</label>
+          <input
+            type="password"
+            id="reg-password"
+            name="password"
+            required
+            minlength="8"
+            maxlength="64"
+            aria-describedby="error-reg-password"
+            autocomplete="new-password"
+          >
+          <span id="error-reg-password" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="reg-password2">Repetir contraseña</label>
+          <input
+            type="password"
+            id="reg-password2"
+            name="password2"
+            required
+            minlength="8"
+            maxlength="64"
+            aria-describedby="error-reg-password2"
+            autocomplete="new-password"
+          >
+          <span id="error-reg-password2" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="reg-fecha">Fecha de nacimiento</label>
+          <input
+            type="date"
+            id="reg-fecha"
+            name="fechaNacimiento"
+            required
+            aria-describedby="error-reg-fecha"
+          >
+          <span id="error-reg-fecha" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo campo-checkbox">
+          <input
+            type="checkbox"
+            id="reg-condiciones"
+            name="aceptaCondiciones"
+            required
+            aria-describedby="error-reg-condiciones"
+          >
+          <label for="reg-condiciones">Acepto las condiciones de acceso y reserva VIP</label>
+          <span id="error-reg-condiciones" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="acciones-formulario">
+          <button type="submit" id="btn-submit-registro" class="btn-principal">Crear usuario</button>
+          <button type="button" id="btn-cancelar-edicion" class="btn-secundario oculto">
+            Cancelar edición
+          </button>
+        </div>
+        <p id="estado-registro" class="estado-formulario" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="vista-usuarios" class="panel-listado">
+      <h2>Usuarios</h2>
+      <div id="lista-usuarios" class="lista-registros"></div>
+    </section>
+  </main>
+</body>
+</html>
