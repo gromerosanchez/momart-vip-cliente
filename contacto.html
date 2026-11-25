@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOMART VIP — Contacto VIP</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="module" src="./js/contacto.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>MOMART VIP · Reservado 04</h1>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="./index.html">Carta VIP</a></li>
+          <li><a href="./carrito.html">Mi Mesa / Carrito</a></li>
+          <li><a href="./tracking.html">Estado Pedido</a></li>
+          <li><a href="./barra.html">Panel Barra</a></li>
+          <li><a href="./registro.html">Registro VIP</a></li>
+          <li><a href="./contacto.html" class="active">Contacto VIP</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout-dos-columnas">
+    <section class="panel-formulario">
+      <h2>Contacto VIP</h2>
+      <form id="form-contacto" class="formulario-vip" novalidate>
+        <div class="campo-grupo">
+          <label for="con-nombre">Nombre</label>
+          <input
+            type="text"
+            id="con-nombre"
+            name="nombre"
+            required
+            minlength="2"
+            maxlength="60"
+            aria-describedby="error-con-nombre"
+            autocomplete="name"
+          >
+          <span id="error-con-nombre" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="con-correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="con-correo"
+            name="correo"
+            required
+            maxlength="100"
+            aria-describedby="error-con-correo"
+            autocomplete="email"
+          >
+          <span id="error-con-correo" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="con-telefono">Teléfono <span id="etiqueta-telefono-opcional">(opcional)</span></label>
+          <input
+            type="tel"
+            id="con-telefono"
+            name="telefono"
+            maxlength="16"
+            placeholder="Ej: 600123456"
+            aria-describedby="error-con-telefono"
+            autocomplete="tel"
+          >
+          <span id="error-con-telefono" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo campo-checkbox">
+          <input
+            type="checkbox"
+            id="con-llamar"
+            name="prefiereLlamada"
+            aria-describedby="error-con-llamar"
+          >
+          <label for="con-llamar">Prefiero que me llaméis</label>
+          <span id="error-con-llamar" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="con-motivo">Motivo de la consulta</label>
+          <select id="con-motivo" name="motivo" required aria-describedby="error-con-motivo">
+            <option value="">Selecciona un motivo...</option>
+            <option value="reserva-mesa">Reservar mesa / reservado VIP</option>
+            <option value="consulta-carta">Consulta sobre botellas o cachimbas</option>
+            <option value="incidencia-pedido">Incidencia con un pedido</option>
+            <option value="evento-privado">Evento privado o cumpleaños</option>
+            <option value="otro">Otra consulta</option>
+          </select>
+          <span id="error-con-motivo" class="mensaje-error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="con-mensaje">Mensaje</label>
+          <textarea
+            id="con-mensaje"
+            name="mensaje"
+            required
+            minlength="10"
+            maxlength="300"
+            rows="4"
+            aria-describedby="error-con-mensaje"
+          ></textarea>
+          <div class="pie-campo">
+            <span id="error-con-mensaje" class="mensaje-error" aria-live="polite"></span>
+            <span id="contador-mensaje" class="contador-caracteres">0 / 300</span>
+          </div>
+        </div>
+
+        <div class="acciones-formulario">
+          <button type="submit" class="btn-principal">Enviar mensaje</button>
+        </div>
+        <p id="estado-contacto" class="estado-formulario" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="vista-mensajes" class="panel-listado">
+      <h2>Mensajes enviados</h2>
+      <div id="lista-mensajes" class="lista-registros"></div>
+    </section>
+  </main>
+</body>
+</html>
