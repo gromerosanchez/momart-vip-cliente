@@ -8,20 +8,20 @@ Aplicación web en Vanilla JavaScript (ES6+ Modules) para que los clientes de lo
 
 | Prioridad | Estado | Funcionalidad | Descripción |
 | :---: | :---: | :--- | :--- |
-| **Alta** | ✅ Completado | Estructura base y ESLint | Montaje del proyecto modular (`index.html`, `css/`, `js/datos.js`, `js/ui.js`, `js/main.js`) y validación sin errores con ESLint. |
-| **Alta** | ✅ Completado | Menú de navegación | Cabecera común con enlaces funcionales a todas las vistas del mapa de pantallas. |
-| **Alta** | ✅ Completado | Catálogo dinámico (listado de productos) | Renderizado automático de tarjetas de producto desde `datos.js` con categoría, precio y disponibilidad. |
-| **Alta** | ✅ Completado | Vista de detalle de producto | Ficha completa al seleccionar un producto (descripción, precio, refrescos incluidos, stock y botón de volver). |
-| **Alta** | ✅ Completado | Persistencia y validación modular | Módulo `almacen.js` sobre `localStorage` y funciones puras de validación en `validacion.js`. |
-| **Alta** | ✅ Completado | Registro y CRUD de usuarios VIP | Formulario con validación en tiempo real, edición sin duplicados y borrado con confirmación (`registro.html`). |
-| **Alta** | ✅ Completado | Contacto VIP y cookies | Formulario de contacto con teléfono condicional, contador de caracteres, mensajes enviados y cookie de autorrelleno (`contacto.html`). |
-| **Media** | ⏳ Pendiente | Filtro por categoría | Filtrado dinámico de la carta según la categoría seleccionada (Botellas Premium, Copas, Hielos y Extras, Cachimbas). |
-| **Media** | ⏳ Pendiente | Buscador de productos | Búsqueda en tiempo real por nombre o descripción del producto. |
-| **Media** | ⏳ Pendiente | Carrito de mesa | Añadir/quitar productos del reservado, ajustar cantidades y calcular el importe total. |
-| **Media** | ⏳ Pendiente | Validación de refrescos incluidos | Selección y control de los refrescos incluidos con cada botella y cálculo de extras adicionales. |
-| **Baja** | ⏳ Pendiente | Confirmación y seguimiento del pedido | Envío de la comanda del reservado y consulta del estado (`Pendiente`, `En preparación`, `En camino`, `Entregado`). |
-| **Baja** | ⏳ Pendiente | Panel de barra | Vista para que el personal de barra consulte las comandas activas por mesa y actualice su estado. |
-| **Baja** | ⏳ Pendiente | Conversión completa a SPA | Navegación entre todas las vistas sin recargar la página. |
+| **Alta** |  Completado | Estructura base y ESLint | Montaje del proyecto modular (`index.html`, `css/`, `js/datos.js`, `js/ui.js`, `js/main.js`) y validación sin errores con ESLint. |
+| **Alta** |  Completado | Menú de navegación | Cabecera común con enlaces funcionales a todas las vistas del mapa de pantallas. |
+| **Alta** |  Completado | Catálogo dinámico (listado de productos) | Renderizado automático de tarjetas de producto desde `datos.js` con categoría, precio y disponibilidad. |
+| **Alta** |  Completado | Vista de detalle de producto | Ficha completa al seleccionar un producto (descripción, precio, refrescos incluidos, stock y botón de volver). |
+| **Alta** |  Completado | Persistencia y validación modular | Módulo `almacen.js` sobre `localStorage` y funciones puras de validación en `validacion.js`. |
+| **Alta** |  Completado | Registro y CRUD de usuarios VIP | Formulario con validación en tiempo real, edición sin duplicados y borrado con confirmación (`registro.html`). |
+| **Alta** |  Completado | Contacto VIP y cookies | Formulario de contacto con teléfono condicional, contador de caracteres, mensajes enviados y cookie de autorrelleno (`contacto.html`). |
+| **Media** |  Pendiente | Filtro por categoría | Filtrado dinámico de la carta según la categoría seleccionada (Botellas Premium, Copas, Hielos y Extras, Cachimbas). |
+| **Media** |  Pendiente | Buscador de productos | Búsqueda en tiempo real por nombre o descripción del producto. |
+| **Media** |  Pendiente | Carrito de mesa | Añadir/quitar productos del reservado, ajustar cantidades y calcular el importe total. |
+| **Media** |  Pendiente | Validación de refrescos incluidos | Selección y control de los refrescos incluidos con cada botella y cálculo de extras adicionales. |
+| **Baja** |  Pendiente | Confirmación y seguimiento del pedido | Envío de la comanda del reservado y consulta del estado (`Pendiente`, `En preparación`, `En camino`, `Entregado`). |
+| **Baja** |  Pendiente | Panel de barra | Vista para que el personal de barra consulte las comandas activas por mesa y actualice su estado. |
+| **Baja** |  Pendiente | Conversión completa a SPA | Navegación entre todas las vistas sin recargar la página. |
 
 ---
 
